@@ -49,7 +49,7 @@ class Student
   end
 
   def self.new_from_db(row)
-    s = self.new(row[0], row[1])
+    s = self.new(row[1], row[2])
     s.id = row[0]
     s
   end
