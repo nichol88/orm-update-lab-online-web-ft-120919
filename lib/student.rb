@@ -30,6 +30,7 @@ class Student
   end
 
   def save
+    
     sql = <<-SQL
     INSERT INTO students (name, grade)
     VALUES (? , ?)
@@ -57,12 +58,18 @@ class Student
     sql = <<-SQL
     SELECT * FROM students
     WHERE name = ?
+    LIMIT 1
     SQL
 
     DB[:conn].execute(sql, name).map{ |row| self.new_from_db(row)}
   end
 
   def update
+    sql = <<-SQL
+    SELECT * FROM students
+    WHERE name = ?
+    SQL
 
+    DB[:conn].execute(sql, name).map{ |row| self.new_from_db(row)}
   end
 end
