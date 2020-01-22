@@ -50,6 +50,7 @@ class Student
 
   def self.new_from_db(row)
     s = self.new
+    binding.pry
     s.id = row[0]
     s.name = row[1]
     s.grade = row[2]
