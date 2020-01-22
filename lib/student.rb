@@ -30,6 +30,7 @@ class Student
   end
 
   def save
+    self.update if self.id
 
     sql = <<-SQL
     INSERT INTO students (name, grade)
