@@ -48,7 +48,7 @@ class Student
   def self.new_from_db(row)
     s = self.new
     sql = <<-SQL
-    
+
     SQL
 
     DB[:conn].execute(sql, name).map{ |row| self.new_from_db(row)}
