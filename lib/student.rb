@@ -52,8 +52,6 @@ class Student
     s = self.new(row[0], row[1])
     binding.pry
     s.id = row[0]
-    s.name = row[1]
-    s.grade = row[2]
     s
   end
 
