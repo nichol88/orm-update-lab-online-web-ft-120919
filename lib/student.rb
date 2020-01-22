@@ -50,6 +50,7 @@ class Student
     s.id = row[0]
     s.name = row[1]
     s.grade = row[2]
+    s
     sql = <<-SQL
 
     SQL
