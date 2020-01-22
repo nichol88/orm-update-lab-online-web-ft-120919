@@ -49,7 +49,7 @@ class Student
   end
 
   def self.new_from_db(row)
-    s = self.new
+    s = self.new(row[1], row[2])
     binding.pry
     s.id = row[0]
     s.name = row[1]
