@@ -67,9 +67,8 @@ class Student
   def update
     sql = <<-SQL
     UPDATE students SET name = ?, grade = ? WHERE id = ?
-    WHERE name = ?
     SQL
 
-    DB[:conn].execute(sql, name).map{ |row| self.new_from_db(row)}
+    DB[:conn].execute(sql, self.name, self.grade)
   end
 end
